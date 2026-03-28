@@ -2,6 +2,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/src/i18n/routing";
 import { notFound } from "next/navigation";
 import "./globals.css"
+import "react-datepicker/dist/react-datepicker.css";
 
 type Props = {
   children: React.ReactNode;

@@ -10,7 +10,7 @@ export default function RoomCard({ room }: Props) {
     const t = useTranslations("common");
     return (
         <div className="group">
-            <div className="relative aspect-3/4 overflow-hidden mb-6">
+            <div className="relative aspect-3/4 overflow-hidden mb-6 -z-10">
                 {/* Image */}
             </div>
             <div className="flex justify-between items-start mb-3"  >
