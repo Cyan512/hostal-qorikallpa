@@ -3,9 +3,9 @@ import { ApiResponse } from "@/src/types/ApiResponse";
 import { Room } from "@/src/types/rooms/Room";
 import { RoomApiResponseItem } from "@/src/types/rooms/RoomApiResponseItem";
 
-export async function getAllRooms(): Promise<Room[]> {
+export async function getRoomsByType(type: string): Promise<Room[]> {
   const response = await fetch(
-    `${environment.app.apiEndpoint}/api/habitaciones/disponibles`,
+    `${environment.app.apiEndpoint}/api/habitaciones/disponibles?tipo=${type}`,
   );
 
   if (!response.ok) {

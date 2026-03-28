@@ -1,10 +1,12 @@
 import { SlidersHorizontal } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { getAllRoomTypes } from "@/src/api/rooms/get-all-room-types";
 
 export default async function RoomsFilters() {
   const t = await getTranslations('common');
+  const roomTypes = await getAllRoomTypes();
   return (
-    <div className="lg:w-72 shrink-0">
+    <aside className="lg:w-72 shrink-0">
       <div className="sticky top-32">
         <div className="flex items-center gap-3 mb-8">
           <SlidersHorizontal size={18} strokeWidth={1.5} />
@@ -14,10 +16,40 @@ export default async function RoomsFilters() {
         </div>
         <div className="space-y-8">
           <div>
-            <label className="block text-xs tracking-[0.15em] uppercase"></label>
+            <label className="block text-xs tracking-[0.15em] uppercase mb-4">
+              Typo
+            </label>
+            <select className="w-full border-b border-black/10 pb-3 text-sm font-light bg-transparent focus:outline-none focus:border-black transition-colors">
+              <option value="">{t("all")}</option>
+              {roomTypes.map((type) => (
+                <option key={type.id} value={type.nombre}>
+                  {type.nombre}
+                </option>
+              ))}
+            </select>
           </div>
+          <div>
+            <label className="block text-xs tracking-[0.15em] uppercase mb-4">
+              priceRange
+            </label>
+            <div className="flex gap-4">
+              <input
+                type="number"
+                placeholder="Min"
+                className="w-full border-b border-black/10 pb-3 text-sm font-light bg-transparent focus:outline-none focus:border-black transition-colors placeholder:text-black/30"
+              />
+              <input
+                type="number"
+                placeholder="Max"
+                className="w-full border-b border-black/10 pb-3 text-sm font-light bg-transparent focus:outline-none focus:border-black transition-colors placeholder:text-black/30"
+              />
+            </div>
+          </div>
+          <button className="w-full bg-black text-white py-4 text-xs font-medium tracking-[0.15em] uppercase hover:bg-black/90 transition-colors mt-8">
+            applyFilters
+          </button>
         </div>
       </div>
-    </div>
+    </aside>
   )
 }

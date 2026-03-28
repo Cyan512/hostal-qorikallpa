@@ -3,10 +3,12 @@ import RoomCard from "@/src/components/molecules/room-card";
 import RoomsFilters from "@/src/components/organisms/rooms-filters";
 import { Room } from "@/src/types/rooms/Room";
 import { getTranslations } from "next-intl/server";
+import { getRoomsByType } from "@/src/api/rooms/get-rooms-by-type";
 
 export default async function RoomsPage() {
   const t = await getTranslations('common');
   const rooms: Room[] = await getAllRooms();
+  const filteredRooms: Room[] = await getRoomsByType("CAMA DOBLE");
 
   return (
     <>
