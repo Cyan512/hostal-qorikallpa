@@ -3,5 +3,12 @@
         "hero": {
             "title": "Welcome"
         }
+    },
+    "common": {
+        "night": "Night",
+        "viewDetails": "View details",
+        "showing": "Showing",
+        "rooms": "Rooms",
+        "filters": "Filters"
     }
 }

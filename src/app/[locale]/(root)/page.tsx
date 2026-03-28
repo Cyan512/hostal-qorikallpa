@@ -6,9 +6,9 @@ export default async function Home() {
 
   return (
     <>
-    <h1>
-      {t('hero.title')}
-    </h1>
+      <h1>
+        {t('hero.title')}
+      </h1>
     </>
   );
 }

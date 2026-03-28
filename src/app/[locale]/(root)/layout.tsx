@@ -1,4 +1,5 @@
-import Header from "@/src/components/header"
+import Footer from "@/src/components/organisms/footer"
+import Header from "@/src/components/organisms/header"
 
 export default function RootLayout({ children, }: {
     children: React.ReactNode
@@ -6,9 +7,10 @@ export default function RootLayout({ children, }: {
     return (
         <div>
             <Header />
-            <main>
+            <main className="flex-1">
                 {children}
             </main>
+            <Footer />
         </div>
     )
 }
