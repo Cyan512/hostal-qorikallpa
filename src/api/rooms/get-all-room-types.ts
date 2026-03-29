@@ -14,3 +14,4 @@ export async function getAllRoomTypes(): Promise<TipoHabitacion[]> {
   const result: ApiResponse<TipoHabitacion> = await response.json();
   return result.data;
 }
+1
