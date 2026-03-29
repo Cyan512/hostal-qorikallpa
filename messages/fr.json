@@ -1,14 +1,32 @@
 {
-    "HomePage": {
-        "hero": {
-            "title": "Bienvenido fr"
-        }
+  "HomePage": {
+    "hero": {
+      "title": "Bienvenido fr"
     },
-    "common": {
-        "night": "Noche",
-        "viewDetails": "Voir les détails",
-        "showing": "Affichage de",
-        "rooms": "Chambres",
-        "filters": "Filtres"
+    "features": {
+      "feature1": {
+        "title": "Emplacement de choix",
+        "description": "Au cœur du centre historique de Cusco"
+      },
+      "feature2": {
+        "title": "Design authentique",
+        "description": "Architecture coloniale avec des touches contemporaines"
+      },
+      "feature3": {
+        "title": "Service exceptionnel",
+        "description": "Service personnalisé 24h/24"
+      }
     }
+  },
+  "newsletter": {
+    "title": "Recevez nos offres",
+    "subtitle": "Abonnez-vous pour recevoir des offres exclusives et des conseils pour votre voyage."
+  },
+  "common": {
+    "night": "Noche",
+    "viewDetails": "Voir les détails",
+    "showing": "Affichage de",
+    "rooms": "Chambres",
+    "filters": "Filtres"
+  }
 }

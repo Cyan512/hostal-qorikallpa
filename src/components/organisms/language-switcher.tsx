@@ -9,6 +9,12 @@ import { useState } from "react";
 const locales = ["es", "en", "fr"] as const;
 type Locale = (typeof locales)[number];
 
+const localeNames: Record<Locale, string> = {
+  es: "Español",
+  en: "English",
+  fr: "Français",
+};
+
 export const LanguageSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
@@ -48,11 +54,7 @@ export const LanguageSwitcher = () => {
                     : "text-stone-400 hover:text-black hover:bg-stone-50",
                 )}
               >
-                {loc === "es"
-                  ? "Español"
-                  : loc === "en"
-                    ? "English"
-                    : "Français"}
+                {localeNames[loc]}
               </button>
             ))}
           </div>

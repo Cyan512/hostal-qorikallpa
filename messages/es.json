@@ -1,14 +1,32 @@
 {
-    "HomePage": {
-        "hero": {
-            "title": "Bienvenido"
-        }
+  "HomePage": {
+    "hero": {
+      "title": "Bienvenido"
     },
-    "common": {
-        "night": "Noche",
-        "viewDetails": "Ver detalles",
-        "showing": "Mostrando",
-        "rooms": "Habitaciones",
-        "filters": "Filtros"
+    "features": {
+      "feature1": {
+        "title": "Ubicación Privilegiada",
+        "description": "En el corazón del centro histórico de Cusco"
+      },
+      "feature2": {
+        "title": "Diseño Auténtico",
+        "description": "Arquitectura colonial con toques contemporáneos"
+      },
+      "feature3": {
+        "title": "Servicio Excepcional",
+        "description": "Atención personalizada las 24 horas"
+      }
     }
+  },
+  "newsletter": {
+    "title": "Recibe nuestras ofertas",
+    "subtitle": "Suscríbete para recibir ofertas exclusivas y consejos para tu viaje."
+  },
+  "common": {
+    "night": "Noche",
+    "viewDetails": "Ver detalles",
+    "showing": "Mostrando",
+    "rooms": "Habitaciones",
+    "filters": "Filtros"
+  }
 }

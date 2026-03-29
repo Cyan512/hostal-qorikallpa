@@ -1,14 +1,32 @@
 {
-    "HomePage": {
-        "hero": {
-            "title": "Welcome"
-        }
+  "HomePage": {
+    "hero": {
+      "title": "Welcome"
     },
-    "common": {
-        "night": "Night",
-        "viewDetails": "View details",
-        "showing": "Showing",
-        "rooms": "Rooms",
-        "filters": "Filters"
+    "features": {
+      "feature1": {
+        "title": "Prime Location",
+        "description": "In the heart of Cusco's historic center"
+      },
+      "feature2": {
+        "title": "Authentic Design",
+        "description": "Colonial architecture with contemporary touches"
+      },
+      "feature3": {
+        "title": "Exceptional Service",
+        "description": "Personalized attention 24 hours a day"
+      }
     }
+  },
+  "newsletter": {
+    "title": "Receive our offers",
+    "subtitle": "Subscribe to receive exclusive offers and travel tips."
+  },
+  "common": {
+    "night": "Night",
+    "viewDetails": "View details",
+    "showing": "Showing",
+    "rooms": "Rooms",
+    "filters": "Filters"
+  }
 }
