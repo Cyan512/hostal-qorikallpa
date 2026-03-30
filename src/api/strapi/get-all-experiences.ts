@@ -28,7 +28,7 @@ export async function getAllExperiences(): Promise<Experience[]> {
         const data = await response.json();
         return data.data;
     } catch (error) {
-        console.warn("⚠️ Strapi no disponible, usando mock");
+        console.warn("Strapi no disponible, usando mock");
         return experiences;
     }
 }

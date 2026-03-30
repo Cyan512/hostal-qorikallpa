@@ -1,4 +1,84 @@
 {
+  "aboutPage": {
+    "hero": {
+      "eyebrow": "Sobre nosotros",
+      "title": {
+        "prefix": "Una historia de",
+        "highlight": "elegancia atemporal"
+      },
+      "description": "Desde 2009, Andean ha sido el refugio de viajeros que buscan experiencias auténticas en el corazón de Cusco."
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "eyebrow": "Contáctanos",
+      "title": {
+        "prefix": "Estamos aquí para",
+        "highlight": "ayudarte"
+      },
+      "description": "¿Tienes preguntas o necesitas ayuda? Nuestro equipo está listo para asistirte en cada paso de tu viaje."
+    }
+  },
+  "experiencesPage": {
+    "hero": {
+      "eyebrow": "Nuestras experiencias",
+      "title": {
+        "prefix": "Vive la",
+        "highlight": "magia de Cusco"
+      },
+      "description": "Descubre experiencias únicas que combinan la riqueza cultural de Cusco con el confort de Andean."
+    }
+  },
+  "faqPage": {
+    "hero": {
+      "eyebrow": "Preguntas frecuentes",
+      "title": {
+        "prefix": "Resuelve tus",
+        "highlight": "dudas"
+      },
+      "description": "Encuentra respuestas a las preguntas más comunes sobre tu estancia en Andean y planifica tu viaje con confianza."
+    }
+  },
+  "galleryPage": {
+    "hero": {
+      "eyebrow": "Nuestra galería",
+      "title": {
+        "prefix": "Explora nuestra",
+        "highlight": "galería de fotos"
+      },
+      "description": "Descubre la belleza de Andean a través de nuestra galería, donde cada imagen cuenta una historia de elegancia y cultura."
+    }
+  },
+  "offersPage": {
+    "hero": {
+      "eyebrow": "Nuestras ofertas",
+      "title": {
+        "prefix": "Aprovecha nuestras",
+        "highlight": "ofertas exclusivas"
+      },
+      "description": "Descubre nuestras ofertas especiales diseñadas para hacer tu estancia en Andean aún más memorable."
+    }
+  },
+  "reviewsPage": {
+    "hero": {
+      "eyebrow": "Lo que dicen nuestros huéspedes",
+      "title": {
+        "prefix": "Experiencias de",
+        "highlight": "nuestros huéspedes"
+      },
+      "description": "Lee las opiniones de quienes han vivido la experiencia Andean y descubre por qué somos la elección preferida en Cusco."
+    }
+  },
+  "roomsPage": {
+    "hero": {
+      "eyebrow": "Nuestras habitaciones",
+      "title": {
+        "prefix": "Descubre el",
+        "highlight": "confort andino"
+      },
+      "description": "Habitaciones diseñadas para ofrecerte una estancia inolvidable, combinando comodidad moderna con la esencia de Cusco."
+    }
+  },
   "HomePage": {
     "hero": {
       "title": "Bienvenido"
@@ -18,6 +98,7 @@
       }
     }
   },
+
   "newsletter": {
     "title": "Recibe nuestras ofertas",
     "subtitle": "Suscríbete para recibir ofertas exclusivas y consejos para tu viaje."

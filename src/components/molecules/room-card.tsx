@@ -12,8 +12,7 @@ export default function RoomCard({ room }: Props) {
   return (
     <div className="group">
       <div className="relative aspect-3/4 overflow-hidden mb-6 -z-10">
-      <Image src={room.imagenes[0]}/>
-        <img src={room.imagenes[0]} alt="" />
+      
         {/* Image */}
       </div>
       <div className="flex justify-between items-start mb-3">
