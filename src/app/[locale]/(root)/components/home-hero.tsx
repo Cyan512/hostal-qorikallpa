@@ -1,5 +1,4 @@
 import { Link } from "@/src/i18n/navigation";
-import { MapPin } from "lucide-react";
 
 export default function HomeHero() {
   return (
@@ -18,26 +17,17 @@ export default function HomeHero() {
           </div>
         </div>
       </div>
-
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full py-16 md:py-24 lg:py-32">
         <div className="max-w-2xl">
-          <div className="mb-8">
-            <span className="text-xs font-medium tracking-[0.3em] uppercase text-white/50">
-              Cusco, Perú
-            </span>
-          </div>
-
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extralight text-white leading-[1.1] mb-8 tracking-wide">
             Donde el tiempo
             <br />
             <span className="font-normal">se detiene</span>
           </h1>
-
           <p className="text-lg text-white/60 leading-relaxed mb-12 max-w-lg font-light">
             Un refugio de elegancia en el corazón de los Andes. Vive
             experiencias que trascienden lo ordinario.
           </p>
-
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/rooms"
@@ -52,13 +42,6 @@ export default function HomeHero() {
               Nuestra historia
             </Link>
           </div>
-        </div>
-      </div>
-
-      <div className="absolute bottom-8 lg:bottom-12 left-4 sm:left-8 lg:left-12 z-20">
-        <div className="flex items-center gap-3 text-white/50 text-xs tracking-wider">
-          <MapPin size={14} strokeWidth={1.5} />
-          <span>Cusco, Perú · 3,400m</span>
         </div>
       </div>
     </section>

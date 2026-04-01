@@ -1,12 +1,6 @@
+import { testimonials } from "@/src/data/testimonials";
 import environment from "@/src/environments/environment";
-
-type Testimonial = {
-    id: number;
-    name: string;
-    country: string;
-    rating: number;
-    text: string;
-};
+import { Testimonial } from "@/src/types/testimonial";
 
 export async function getAllTestimonials(): Promise<Testimonial[]> {
     try {
@@ -24,7 +18,7 @@ export async function getAllTestimonials(): Promise<Testimonial[]> {
         const data = await response.json();
         return data.data;
     } catch (error) {
-        console.error("Error fetching testimonials:", error);
-        throw error;
+        console.warn("Strapi no disponible, usando mock");
+        return testimonials
     }
 }

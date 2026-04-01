@@ -1,8 +1,8 @@
 import { getTranslations } from "next-intl/server";
 
 import HeroSection from "@/src/components/pages/hero-section";
-import ContactBlock from "@/src/components/pages/contact/contact-block";
-import ContactLocation from "@/src/components/pages/contact/contact-location";
+import ContactBlock from "@/src/app/[locale]/(root)/contact/components/contact-block";
+import ContactLocation from "@/src/app/[locale]/(root)/contact/components/contact-location";
 
 export default async function ContactPage() {
   const t = await getTranslations("contactPage");

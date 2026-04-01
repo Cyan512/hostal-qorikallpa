@@ -1,16 +1,6 @@
 import { experiences } from "@/src/data/experiences";
 import environment from "@/src/environments/environment";
-
-type ExperienceImage = {
-  url: string;
-};
-
-type Experience = {
-  id: number;
-  title: string;
-  description: string;
-  image: ExperienceImage | string;
-};
+import { Experience } from "@/src/types/Experience";
 
 export async function getAllExperiences(): Promise<Experience[]> {
     try {

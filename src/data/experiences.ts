@@ -1,23 +1,31 @@
-export const experiences = [
+import { Experience } from "@/src/types/Experience";
+
+export const experiences: Experience[] = [
   {
     id: 1,
-    title: "Mercado Local",
-    description:
-      "Explora mercados tradicionales donde podrás encontrar productos frescos, artesanías locales y probar comida típica peruana como ceviche, tamales y jugos naturales.",
-    image: "/test.webp",
+    category: "Cultural",
+    title: "Tour por el centro histórico de Cusco",
+    description: "Explora las calles empedradas y la arquitectura colonial de Cusco con un guía local.",
+    duration: 3,
+    price: 30,
+    image: "/images/experience1.jpg",
   },
   {
     id: 2,
-    title: "Tours a Ruinas Inkas",
-    description:
-      "Visita impresionantes sitios arqueológicos de la cultura Inca, como templos, terrazas y ciudades antiguas. Incluye guías turísticos que explican la historia y cultura del imperio incaico.",
-    image: "/test.webp",
+    category: "Aventura",
+    title: "Excursión a Machu Picchu",
+    description: "Visita la ciudadela inca de Machu Picchu y disfruta de vistas impresionantes.",
+    duration: 8,
+    price: 150,
+    image: "/images/experience2.jpg",
   },
   {
     id: 3,
-    title: "Turismo Vivencial",
-    description:
-      "Vive una experiencia auténtica compartiendo con comunidades locales, participando en actividades como agricultura, cocina tradicional y costumbres ancestrales.",
-    image: "/test.webp",
-  },
+    category: "Cultural",
+    title: "Clases de Cocina Peruana",
+    description: "Aprende a preparar platos tradicionales peruanos con ingredientes frescos y técnicas auténticas.",
+    duration: 2,
+    price: 50,
+    image: "/images/experience3.jpg",
+  }
 ];

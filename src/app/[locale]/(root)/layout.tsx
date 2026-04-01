@@ -1,16 +1,17 @@
 import Footer from "@/src/components/organisms/footer"
 import Header from "@/src/components/organisms/header"
+import React from "react";
 
-export default function RootLayout({ children, }: {
+export default function RootLayout({children,}: {
     children: React.ReactNode
 }) {
     return (
         <div>
-            <Header />
+            <Header/>
             <main className="flex-1">
                 {children}
             </main>
-            <Footer />
+            <Footer/>
         </div>
     )
 }
