@@ -3,7 +3,7 @@ const environmentProd = {
   version: "PROD",
 
   app: {
-    apiEndpoint: process.env.VITE_API_URL,
+    apiEndpoint: process.env.NEXT_PUBLIC_API_URL,
   },
 
   strapi: {
