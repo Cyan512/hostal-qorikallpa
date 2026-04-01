@@ -72,7 +72,7 @@ export default async function HomeRoomsPreview() {
                   <SmartImage
                     strapiUrl={room.habitacion?.url_imagen?.[0]}
                     alt={room.nombre}
-                    width={800}
+                    width={800} 
                     height={500}
                   />
                 </div>
@@ -89,7 +89,7 @@ export default async function HomeRoomsPreview() {
               </div>
               <div className="flex items-baseline gap-1 mb-6">
                 <span className="text-2xl font-light text-tx">
-                  {room.precio}
+                  {room.habitacion.tipo_habitacion_id}
                 </span>
                 <span className="text-xs text-tx3">noche</span>
               </div>
