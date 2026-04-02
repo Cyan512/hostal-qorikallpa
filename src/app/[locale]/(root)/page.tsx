@@ -1,16 +1,21 @@
 import { getTranslations } from "next-intl/server";
-import {
-  getPageContent,
-  extractPageComponents,
-} from "@/src/api/get-page-content";
-import HomeFeatures from "@/src/app/[locale]/(root)/components/home-features";
+import { getPageContent } from "@/src/api/get-page-content";
 import HomeHero from "@/src/app/[locale]/(root)/components/home-hero";
-import HomeReservationsCTA from "@/src/app/[locale]/(root)/components/home-reservations-cta";
-import HomeRoomsPreview from "@/src/app/[locale]/(root)/components/home-rooms-preview";
-import HomeTestimonials from "@/src/app/[locale]/(root)/components/home-testimonials";
 import HomeWelcome from "@/src/app/[locale]/(root)/components/home-welcome";
-import Newsletter from "@/src/components/pages/newsletter";
 import { HeroComponent, WelcomeComponent } from "@/src/types/home";
+
+function renderComponent(component: any, index: number) {
+  switch (component.__component) {
+    case "home.hero":
+      return <HomeHero key={component.id} data={component as HeroComponent} />;
+    case "home.welcome":
+      return (
+        <HomeWelcome key={component.id} data={component as WelcomeComponent} />
+      );
+    default:
+      return null;
+  }
+}
 
 export default async function Home({
   params,
@@ -23,21 +28,11 @@ export default async function Home({
   const response = await getPageContent("home", locale);
   const content = response?.data?.content || [];
 
-  const heroData = extractPageComponents<HeroComponent>(content, "home.hero");
-  const welcomeData = extractPageComponents<WelcomeComponent>(
-    content,
-    "home.welcome",
-  );
-
   return (
     <>
-      <HomeHero data={heroData} />
-      <HomeWelcome data={welcomeData} />
-      <HomeRoomsPreview />
-      <HomeTestimonials />
-      <Newsletter title={t("title")} subtitle={t("subtitle")} />
-      <HomeFeatures />
-      <HomeReservationsCTA />
+      {content.map((component: any, index: number) =>
+        renderComponent(component, index),
+      )}
     </>
   );
 }
