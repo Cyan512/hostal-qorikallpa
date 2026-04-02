@@ -10,7 +10,7 @@ export async function getPageContent(endpoint: string, locale: string) {
         const res = await fetch(
             `${environment.strapi.apiEndpoint}/api/${endpoint}?locale=${locale}&populate[content][populate]=*`,
             {
-                next: { revalidate: 60 },
+                next: { revalidate: 0 },
             }
         );
 

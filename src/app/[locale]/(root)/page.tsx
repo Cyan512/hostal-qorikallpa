@@ -17,11 +17,11 @@ function renderComponent(component: any, index: number) {
   }
 }
 
-export default async function Home({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+interface Props {
+  params: { locale: string };
+}
+
+export default async function Home({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations("newsletter");
 
