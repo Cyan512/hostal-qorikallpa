@@ -1,23 +1,40 @@
 import environment from "@/src/environments/environment";
+import { homeFallbackData } from "@/src/data/fallback/home";
+
+const fallbackDataMap: Record<string, any> = {
+    home: homeFallbackData,
+};
 
 export async function getPageContent(endpoint: string, locale: string) {
-    const res = await fetch(
-        `${environment.strapi.apiEndpoint}/api/${endpoint}?locale=${locale}&populate[content][populate]=*`,
-        {
-            next: { revalidate: 60 },
+    try {
+        const res = await fetch(
+            `${environment.strapi.apiEndpoint}/api/${endpoint}?locale=${locale}&populate[content][populate]=*`,
+            {
+                next: { revalidate: 60 },
+            }
+        );
+
+        if (!res.ok) {
+            console.warn(`⚠️ Strapi error for ${endpoint}, using fallback`);
+            return fallbackDataMap[endpoint] || { data: { content: [] } };
         }
-    );
 
-    if (!res.ok) {
-        return null;
+        const data = await res.json();
+
+        if (!data.data || !data.data.content || data.data.content.length === 0) {
+            console.warn(`⚠️ No content for ${endpoint}, using fallback`);
+            return fallbackDataMap[endpoint] || { data: { content: [] } };
+        }
+
+        return data;
+    } catch (error) {
+        console.warn(`⚠️ Strapi unavailable for ${endpoint}, using fallback`);
+        return fallbackDataMap[endpoint] || { data: { content: [] } };
     }
-
-    const data = await res.json();
-    return data;
 }
 
 export function extractPageComponents<T>(
-    content: any[], 
+    content: any[],
     componentType: string
 ): T | undefined {
     if (!content || !Array.isArray(content)) return undefined;
