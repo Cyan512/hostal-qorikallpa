@@ -1,58 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+
 @import "tailwindcss";
 @import "../../styles/booking-input.css";
 
+:root {
+    --font-cinzel: "Cinzel Decorative", serif;
+    --font-josefin: "Josefin Sans", sans-serif;
+    --font-cormorant: "Cormorant", serif;
+}
+
 @theme {
-    /* Colores Pergamino */
-    --color-pg0: #fdf6e3;
-    --color-pg1: #f5e8c0;
-    --color-pg2: #edd9a0;
-    --color-pg3: #e0c878;
+    /* 🎯 Jerarquía tipográfica */
 
-    /* Colores Tierra */
-    --color-t0: #7a3a18;
-    --color-t1: #5c2a0e;
-    --color-t2: #3e1a06;
-    --color-t3: #a35228;
-    --color-t4: #c8773a;
+    /* Títulos principales (Hero, branding) */
+    --font-title: var(--font-cinzel);
 
-    /* Colores Rojo Inca */
-    --color-r0: #7b1c1c;
-    --color-r1: #9e2424;
-    --color-r2: #c23030;
+    /* UI / Interfaz (botones, navbar, inputs) */
+    --font-ui: var(--font-josefin);
 
-    /* Colores Oro */
-    --color-o0: #b8892a;
-    --color-o1: #d4a83c;
-    --color-o2: #ecc85a;
+    /* Contenido (párrafos, descripciones) */
+    --font-body: var(--font-cormorant);
 
-    /* Neutros */
-    --color-n0: #8c7355;
-    --color-n1: #a89070;
-    --color-n2: #c4ac90;
-    --color-n3: #d8c8a8;
-
-    /* Verdes */
-    --color-v0: #2e4e28;
-    --color-v1: #4a7840;
-
-    /* Texto */
-    --color-tx: #2a1506;
-    --color-tx2: #5c3818;
-    --color-tx3: #8c6a48;
-
-    /* Sombras */
-    --shadow-paper: 0 2px 16px rgba(90, 42, 14, 0.13);
-    --shadow-paper-md: 0 4px 28px rgba(90, 42, 14, 0.18);
-}
-
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-main {
-    min-height: 100vh;
+    /* Opcional: subtítulos (más elegante que Cinzel para lectura) */
+    --font-subtitle: var(--font-cormorant);
 }
 
 @layer components {
@@ -117,5 +89,3 @@ main {
 .animate-fade-in-up {
     animation: fade-in-up 0.4s ease-out forwards;
 }
-
-

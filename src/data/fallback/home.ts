@@ -1,27 +1,39 @@
-export const homeFallbackData = {
-  data: {
-    content: [
-      {
-        __component: "home.hero",
-        id: 0,
-        title: "Donde el tiempo se detiene",
-        description: "Un refugio de elegancia en el corazón de los Andes. Vive experiencias que trascienden lo ordinario.",
-        cta_text_primary: "Explorar habitaciones",
-        cta_link_primary: "/rooms",
-        cta_text_secondary: "Nuestra historia",
-        cta_link_secondary: "/about",
-        image: null
-      },
-      {
-        __component: "home.welcome",
-        id: 0,
-        subtitle: "Bienvenida",
-        title: "Un legado de elegancia",
-        description: "Andean nace de la pasión por compartir la magia de los Andes con el mundo. Cada espacio ha sido diseñado para ofrecerte una experiencia única.",
-        cta_text: "Descubre más",
-        cta_link: "/about",
-        image: null
-      }
-    ]
+import { getTranslations } from "next-intl/server";
+import { getPageContent } from "@/src/api/get-page-content";
+import HomeHero from "@/src/app/[locale]/(root)/components/home-hero";
+import HomeWelcome from "@/src/app/[locale]/(root)/components/home-welcome";
+import { HeroComponent, WelcomeComponent } from "@/src/types/home";
+
+function renderComponent(component: any, index: number) {
+  switch (component.__component) {
+    case "home.hero":
+      return <HomeHero key={component.id} data={component as HeroComponent} />;
+    case "home.welcome":
+      return (
+          <HomeWelcome key={component.id} data={component as WelcomeComponent} />
+    );
+    default:
+      return null;
   }
-};
+}
+
+interface Props {
+  params: { locale: string };
+}
+
+export default async function Home({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations("newsletter");
+
+  const response = await getPageContent("home", locale);
+  const content = response?.data?.content || [];
+
+  return (
+      <>
+          {content.map((component: any, index: number) =>
+                renderComponent(component, index),
+            )}
+      </>
+  );
+}
+

@@ -1,5 +1,7 @@
 import { cn } from "@/src/lib/cn";
 import { Link } from "@/src/i18n/navigation";
+import { routing } from "@/src/i18n/routing";
+import { useLocale } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { ReactNode } from "react";
 
@@ -33,6 +35,7 @@ export function Button({
   disabled,
   showArrow = true,
 }: ButtonProps) {
+  const locale = useLocale();
   const baseStyles =
     "inline-flex items-center gap-2 text-xs font-medium tracking-[0.2em] uppercase";
 
@@ -58,8 +61,21 @@ export function Button({
   );
 
   if (href) {
+    const isExternal = href.startsWith("http") || href.startsWith("www");
+    const isAnchor = href.startsWith("#");
+    const isLocalePath = routing.locales.some((l: string) => 
+      href === `/${l}` || href.startsWith(`/${l}/`)
+    );
+    
+    let finalHref = href;
+    if (!isExternal && !isAnchor && !isLocalePath) {
+      if (!href.startsWith("/")) {
+        finalHref = `/${href}`;
+      }
+    }
+    
     return (
-      <Link href={href} className={combinedStyles}>
+      <Link href={finalHref} className={combinedStyles}>
         {content}
       </Link>
     );

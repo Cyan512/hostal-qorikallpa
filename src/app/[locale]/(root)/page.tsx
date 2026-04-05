@@ -1,38 +1,38 @@
-import { getTranslations } from "next-intl/server";
-import { getPageContent } from "@/src/api/get-page-content";
-import HomeHero from "@/src/app/[locale]/(root)/components/home-hero";
+import {getPageContent} from "@/src/api/pages/get-page-content";
+import {homeFallbackData} from "@/src/api/pages/homeFallbackData";
+import {HeroComponent, WelcomeComponent} from "@/src/types/home";
 import HomeWelcome from "@/src/app/[locale]/(root)/components/home-welcome";
-import { HeroComponent, WelcomeComponent } from "@/src/types/home";
+import Hero from "@/src/app/[locale]/(root)/components/hero";
+import {HeroSection} from "@/src/types/pages/home"
 
 function renderComponent(component: any, index: number) {
-  switch (component.__component) {
-    case "home.hero":
-      return <HomeHero key={component.id} data={component as HeroComponent} />;
-    case "home.welcome":
-      return (
-        <HomeWelcome key={component.id} data={component as WelcomeComponent} />
-      );
-    default:
-      return null;
-  }
+    switch (component.__component) {
+        case "home.hero":
+            return <Hero key={component.id} data={component as HeroSection}/>
+        case "home.welcome":
+            return (
+                <HomeWelcome key={component.id} data={component as WelcomeComponent}/>
+            );
+        default:
+            return null;
+    }
 }
 
 interface Props {
-  params: { locale: string };
+    params: { locale: string };
 }
 
-export default async function Home({ params }: Props) {
-  const { locale } = await params;
-  const t = await getTranslations("newsletter");
-
-  const response = await getPageContent("home", locale);
-  const content = response?.data?.content || [];
-
-  return (
-    <>
-      {content.map((component: any, index: number) =>
-        renderComponent(component, index),
-      )}
-    </>
-  );
+export default async function Home({params}: Props) {
+    const {locale} = await params;
+    const response = await getPageContent("home-page", locale, homeFallbackData)
+    const content = response?.data?.content || [];
+    
+    console.log("homepage", content)
+    return (
+        <>
+            {content.map((component: any, index: number) =>
+                renderComponent(component, index),
+            )}
+        </>
+    )
 }
