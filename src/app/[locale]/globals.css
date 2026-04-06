@@ -28,9 +28,9 @@
 }
 
 @layer components {
-    section {
-        @apply bg-[url('/bg/tests.webp')] bg-cover bg-center;
-    }
+    /*section {*/
+    /*    @apply bg-[url('/bg/tests.webp')] bg-cover bg-center;*/
+    /*}*/
 
     .clip-stepped {
         clip-path: polygon(0% 40px, 40px 40px, 40px 0%,

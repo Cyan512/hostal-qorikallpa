@@ -7,6 +7,7 @@ export default function RootLayout({children,}: {
 }) {
     return (
         <div>
+            <Header/>
             <main className="flex-1">
                 {children}
             </main>
